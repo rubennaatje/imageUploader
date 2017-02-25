@@ -1,0 +1,9 @@
+//
+   Created by ruben on 25/02/2017.
+extends layout
+
+block content
+
+    form(action="/upload", method="post", enctype="multipart/form-data")
+     input(type="file", name="displayImage")
+     input(type='submit')
