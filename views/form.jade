@@ -4,6 +4,7 @@ extends layout
 
 block content
 
-    form(action="/upload", method="post", enctype="multipart/form-data")
-     input(type="file", name="displayImage")
-     input(type='submit')
+    form.form-horizontal(action="/upload", method="post", enctype="multipart/form-data")
+     input.input-group(type="file", name="displayImage")
+     input.btn.btn-default(type='submit',class='btn btn-default')
+     br

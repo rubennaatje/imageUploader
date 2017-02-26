@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    table
+        tr
+            td | naam
+            td | woonplaats
+            td | tel
+            td | naam
+
+        - each item in klanten
+            tr
+                td | !{item.achternaam}
+                td | !{item.woonplaats}
+                td | !{item.tel}
