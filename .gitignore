@@ -56,3 +56,9 @@ typings/
 
 # dotenv environment variables file
 .env
+
+#ignore uploads
+public/uploads/*
+
+# exception to the rule
+!public/uploads/.gitkeep
