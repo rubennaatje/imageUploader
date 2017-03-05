@@ -1,8 +1,44 @@
 body {
-  padding: 50px;
+  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #dddddd;
+  background-color: #090909;
 }
-
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #ffffff;
+}
 a {
-  color: #00B7FF;
+  color: rgba(50, 50, 50, 1);
+}
+a:hover, a:focus {
+  text-decoration: none;
+  color: rgba(50, 50, 50, 1);
+}
+.dropzone .dz-preview {
+
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.dropzone {
+  border: 2px solid rgba(108, 108, 108, 0.3);
+  background: #0d0d0d;
+}
+.image-row {
+  margin-bottom: 10px;
+}
+.navbar-inverse {
+  background-color: #202020;
+  border-color: #8b3c3c;
+}
+.imageblock {
+  overflow: hidden;
+}
+.image-thumbnail{
+  background-position: center center;
+  background-size: cover;
+}
+a.image-thumbnail {
+  display: block;
+  height: 200px;
 }

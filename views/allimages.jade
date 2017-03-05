@@ -1,16 +1,32 @@
+
 extends layout
 
 block content
-    div.row
-        div.col-sm-12
-            form.form-horizontal(action="/upload", method="post", enctype="multipart/form-data")
-                input.input-group(type="file", name="displayImage")
-                br
-                input.btn.btn-default(type='submit',class='btn btn-default')
-                br
-                br
-        -for(var i = 0; i < images.length;i++)
-            div.col-sm-3
-                img(src='/uploads/'+images[i].name,style='max-width:100%;')
-                br
-                | !{images[i].name} | !{images[i].created}
+    div.container
+        div.row
+            div.text-center
+            form#my-awesome-dropzone.dropzone(action='/upload')
+
+            .section
+                .container
+                    .row
+                        .col-md-12
+                            h1.text-center Recent uploads
+                            p.text-center.lead The last user submitted images.
+                    .row
+                        -for(var i = 0; i < images.length - 4;i+=4)
+                            .image-row
+                                .row
+                                    .col-md-3.imageblock
+                                        a.image-thumbnail(href='/view/'+images[i].sId,style='background: url(/uploads/'+images[i].name+ ') no-repeat center;background-size: cover;')
+                                        | !{images[i].location}
+                                    .col-md-3.imageblock
+                                        a.image-thumbnail(href='/view/' + images[i + 1].sId,style='background: url(/uploads/' + images[i + 1].name + ') no-repeat center;background-size: cover;')
+                                        !{images[i + 1].location}
+                                    .col-md-3.imageblock
+                                        a.image-thumbnail(href='/view/' + images[i + 2].sId,style='background: url(/uploads/' + images[i + 2].name + ') no-repeat center;background-size: cover;')
+                                        !{images[i + 2].location}
+                                    .col-md-3.imageblock
+                                        a.image-thumbnail(href='/view/' + images[i + 2].sId,style='background: url(/uploads/' + images[i + 3].name + ') no-repeat center;background-size: cover;')
+                                        !{images[i + 3].location}
+

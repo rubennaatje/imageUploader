@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var randomstring = require('randomstring');
 mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://localhost/test');
 var multer = require('multer');
@@ -15,7 +16,9 @@ db.once('open', function() {
 });
 var imageSchema = mongoose.Schema({
     name: String,
+    sId: {type: String, default:randomstring.generate(7)},
     ip: String,
+    location: String,
     created: { type: Date, default: Date.now },
     public: Boolean,
     meta: {
